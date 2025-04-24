@@ -27,7 +27,9 @@ const Register = () => {
     setLoading(true); 
 
     try {
-      await axios.post("http://localhost:5000/api/auth/register", {
+      const apiUrl = `${process.env.REACT_APP_API_URL}/auth/register`; 
+  
+      await axios.post(apiUrl, {
         name,
         email,
         password,

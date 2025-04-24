@@ -17,7 +17,7 @@ const LeitorQrCode =() => {
 
       const codigo = decodedText.split("/").pop();
 
-      fetch(`http://localhost:5000/api/participantes/confirmar-presenca/${codigo}`)
+      fetch(`${process.env.REACT_APP_API_URL}/participantes/confirmar-presenca/${codigo}`)
         .then((res) => res.json())
         .then((data) => {
           setMensagem(data.message || "Presença confirmada!");

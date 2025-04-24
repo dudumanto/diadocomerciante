@@ -1,7 +1,5 @@
 const participanteService = require('../services/participanteService');
 
-
-
 const convidarParticipante = async (req, res) => {
     try {
         const { nome, email, distrital_id } = req.body;

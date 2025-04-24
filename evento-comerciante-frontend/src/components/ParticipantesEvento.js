@@ -36,14 +36,14 @@ const ParticipantesEvento = () => {
         const { role } = decoded;
 
         const participantesUrl = role === 'admin'
-          ? 'http://localhost:5000/api/participantes/listar-todos'
-          : 'http://localhost:5000/api/participantes/listar';
+        ? `${process.env.REACT_APP_API_URL}/participantes/listar-todos`
+        : `${process.env.REACT_APP_API_URL}/participantes/listar`;
 
 
         const [participantesRes, distritaisRes] = await Promise.all([
           axios.get(participantesUrl, { headers: { Authorization: `Bearer ${token}` } }),
-          axios.get('http://localhost:5000/api/distrital/listar', { headers: { Authorization: `Bearer ${token}` } }),
-        ]);
+          axios.get(`${process.env.REACT_APP_API_URL}/distrital/listar`, { headers: { Authorization: `Bearer ${token}` } }),
+        ])
 
         setParticipantes(participantesRes.data);
 

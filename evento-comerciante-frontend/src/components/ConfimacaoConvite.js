@@ -8,7 +8,7 @@ const AceitarConvite =() => {
   const [mensagem, setMensagem] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/participantes/aceitar-convite/${codigoConvite}`)
+    fetch(`${process.env.REACT_APP_API_URL}/participantes/aceitar-convite/${codigoConvite}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.message) {
@@ -24,7 +24,7 @@ const AceitarConvite =() => {
         setMensagem("Erro ao conectar com o servidor.");
       });
   }, [codigoConvite]);
-
+  
   return (
     <div style={{ textAlign: "center", padding: "3rem", fontFamily: "sans-serif" }}>
       {status === "carregando" && <p>🔄 Confirmando seu convite...</p>}

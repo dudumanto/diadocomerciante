@@ -1,7 +1,5 @@
 const usuarioService = require("../services/usuarioService");
 
-
-
 async function cadastrarUsuario(req, res){
      try{
         const {nome, email, senha, distrital_id, limite_participantes} = req.body;

@@ -14,11 +14,11 @@ console.log("🔐 JWT_SECRET carregado:", process.env.JWT_SECRET);
 app.use(cors());
 app.use(express.json());
 
-console.log("✅ Iniciando servidor...");
-console.log("✅ Rotas registradas:");
-console.log("🚀 /api/auth -> authRoutes");
-console.log("🚀 /api/usuarios -> usuarioRoutes");
-console.log("🚀 /api/distrital -> distritalRoutes");
+console.log(" Iniciando servidor...");
+console.log(" Rotas registradas:");
+console.log(" /api/auth -> authRoutes");
+console.log(" /api/usuarios -> usuarioRoutes");
+console.log(" /api/distrital -> distritalRoutes");
 
 app.use('/api/auth', authRoutes);
 app.use("/api/usuarios", usuarioRoutes);

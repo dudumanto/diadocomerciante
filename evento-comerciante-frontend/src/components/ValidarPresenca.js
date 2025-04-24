@@ -10,7 +10,9 @@ const ValidarPresenca = () => {
     if (data) {
       try {
         const userId = data.split("/").pop(); 
-        await axios.get(`http://localhost:5000/api/usuarios/validar-presenca/${userId}`);
+        const apiUrl = `${process.env.REACT_APP_API_URL}/usuarios/validar-presenca/${userId}`;
+        
+        await axios.get(apiUrl);
         setResultado({ type: "success", message: "Presença confirmada com sucesso!" });
       } catch (error) {
         setResultado({ type: "error", message: "Erro ao confirmar presença." });

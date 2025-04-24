@@ -17,7 +17,10 @@ const RegisterDistrital = () => {
     setMensagem(null);
 
     try {
-      await axios.post("http://localhost:5000/api/distrital/cadastrar", {
+    
+      const apiUrl = `${process.env.REACT_APP_API_URL}/distrital/cadastrar`;
+
+      await axios.post(apiUrl, {
         nome,
         limite_participantes: limiteParticipantes,
       });

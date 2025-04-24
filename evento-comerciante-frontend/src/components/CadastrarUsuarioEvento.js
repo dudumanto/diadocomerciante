@@ -27,15 +27,16 @@ const CadastrarUsuarioEvento = () => {
   useEffect(() => {
     const fetchDistritais = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/distrital/listar");
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/distrital/listar`);
         setDistritais(response.data);
       } catch (error) {
         console.error("Erro ao buscar distritais:", error);
       }
     };
-
+  
     fetchDistritais();
   }, []);
+  
 
   const handleSelectDistrital = (event) => {
     const selectedId = event.target.value;
@@ -50,11 +51,11 @@ const CadastrarUsuarioEvento = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:5000/api/usuarios/cadastrar",
+        `${process.env.REACT_APP_API_URL}/usuarios/cadastrar`, 
         { nome, email, senha, distrital_id: distritalId, limite_participantes: limiteParticipantes },
         { headers: { Authorization: `Bearer ${token}` } }
       );
-
+  
       setMensagem({ text: "Usuário responsável cadastrado com sucesso!", type: "success" });
       setNome("");
       setEmail("");
@@ -70,7 +71,6 @@ const CadastrarUsuarioEvento = () => {
   return (
     <Container maxWidth="sm" sx={{ mt: 5 }}>
       <Paper elevation={6} sx={{ p: 4, borderRadius: 3 }}>
-        {/* Botão de Logout alinhado à direita */}
         <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 2 }}>
 
         </Box>

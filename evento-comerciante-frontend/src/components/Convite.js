@@ -42,7 +42,7 @@ const Convite =() => {
 
       setDistritalId(decoded.distrital_id);
 
-      fetch(`http://localhost:5000/api/distrital/${decoded.distrital_id}`)
+      fetch(`${process.env.REACT_APP_API_URL}/distrital/${decoded.distrital_id}`)
         .then((res) => res.json())
         .then((data) => setDistritalNome(data.nome || "Nome não encontrado"))
         .catch(() => setDistritalNome("Erro ao carregar nome"));
@@ -58,7 +58,7 @@ const Convite =() => {
     setMensagem("");
     setErro("");
     setModalStatus("loading");
-    setModalOpen(true); // Abre o modal
+    setModalOpen(true); 
 
     try {
       const response = await fetch("http://localhost:5000/api/participantes/convidar", {
