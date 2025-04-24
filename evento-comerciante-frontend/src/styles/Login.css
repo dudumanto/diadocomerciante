@@ -1,0 +1,9 @@
+.button{
+    background: linear-gradient(34deg, rgba(0, 48, 120, 1) 0%, rgba(0, 48, 120, 1) 25%, rgba(0, 71, 139, 1) 62%, rgba(3, 128, 247, 1) 100%);
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid #333;
+}.input_input{
+    border-radius: 10px;
+    background-color: white;
+}
