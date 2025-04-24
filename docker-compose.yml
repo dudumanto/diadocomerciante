@@ -1,0 +1,18 @@
+
+
+services:
+  backend:
+    build: ./back-end
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./back-end:/app
+    environment:
+      - NODE_ENV=production
+
+  frontend:
+    build: ./evento-comerciante-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
