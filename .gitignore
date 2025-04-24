@@ -4,3 +4,5 @@ node_modules/
 dist/
 Dockerfile*
 docker-compose.override.yml
+back-end/qrcodes/*
+!back-end/qrcodes/.gitkeep
