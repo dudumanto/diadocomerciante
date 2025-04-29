@@ -6,7 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import './styles/Global.css';
 
 
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,7 +15,6 @@ root.render(
 );
 
 
-serviceWorkerRegistration.register();
 
 
 reportWebVitals();
